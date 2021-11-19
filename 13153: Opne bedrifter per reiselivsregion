@@ -1,0 +1,39 @@
+{
+  ""query"": [
+    {
+      ""code"": ""Region"",
+      ""selection"": {
+        ""filter"": ""vs:ReiselivsRegioner"",
+        ""values"": [
+          ""18101"",
+          ""18102"",
+          ""18103"",
+          ""18104"",
+          ""18105""
+        ]
+      }
+    },
+    {
+      ""code"": ""InnKvartering1"",
+      ""selection"": {
+        ""filter"": ""item"",
+        ""values"": [
+          ""01"",
+          ""02+03+04""
+        ]
+      }
+    },
+    {
+      ""code"": ""Tid"",
+      ""selection"": {
+        ""filter"": ""all"",
+        ""values"": [
+          ""*""
+        ]
+      }
+    }
+  ],
+  ""response"": {
+    ""format"": ""csv2""
+  }
+}
