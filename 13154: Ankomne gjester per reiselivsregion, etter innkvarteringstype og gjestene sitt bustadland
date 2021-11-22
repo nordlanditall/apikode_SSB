@@ -1,0 +1,36 @@
+let
+	PostContents = "{
+  ""query"": [
+    {
+      ""code"": ""Region"",
+      ""selection"": {
+        ""filter"": ""vs:ReiselivsRegioner"",
+        ""values"": [
+          ""18101"",
+          ""18102"",
+          ""18103"",
+          ""18104"",
+          ""18105""
+        ]
+      }
+    },
+    {
+      ""code"": ""Landkoder2"",
+      ""selection"": {
+        ""filter"": ""item"",
+        ""values"": [
+          ""00000"",
+          ""000"",
+          ""ccc""
+        ]
+      }
+    }
+  ],
+  ""response"": {
+    ""format"": ""csv2""
+  }
+}",
+	Kilde = Web.Contents("https://data.ssb.no/api/v0/no/table/13154/", [Content=Text.ToBinary(PostContents)]),
+	Data=Csv.Document(Kilde, [Encoding=1252])
+in
+	Data
