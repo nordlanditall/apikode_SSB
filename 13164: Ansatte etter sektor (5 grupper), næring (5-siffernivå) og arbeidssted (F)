@@ -1,4 +1,5 @@
-{
+let
+	PostContents = "{
   ""query"": [
     {
       ""code"": ""Region"",
@@ -864,3 +865,8 @@
     ""format"": ""csv2""
   }
 }
+",
+	Kilde = Web.Contents("https://data.ssb.no/api/v0/no/table/13164/", [Content=Text.ToBinary(PostContents)]),
+	Data=Csv.Document(Kilde, [Encoding=1252])
+in
+	Data
