@@ -1,0 +1,31 @@
+let
+	PostContents = "{
+  ""query"": [
+    {
+      ""code"": ""Region"",
+      ""selection"": {
+        ""filter"": ""vs:Fylker2020"",
+        ""values"": [
+          ""30"",
+          ""03"",
+          ""34"",
+          ""38"",
+          ""42"",
+          ""11"",
+          ""46"",
+          ""15"",
+          ""50"",
+          ""18"",
+          ""54""
+        ]
+      }
+    }
+  ],
+  ""response"": {
+    ""format"": ""csv2""
+  }
+}",
+	Kilde = Web.Contents("https://data.ssb.no/api/v0/no/table/12897/", [Content=Text.ToBinary(PostContents)]),
+	Data=Csv.Document(Kilde, [Encoding=1252])
+in
+	Data
