@@ -16,7 +16,7 @@ let
     }
   ],
   ""response"": {
-    ""format"": ""json-stat2""
+    ""format"": ""csv2""
   }
 }",
 	Kilde = Web.Contents("https://data.ssb.no/api/v0/no/table/13157/", [Content=Text.ToBinary(PostContents)]),
