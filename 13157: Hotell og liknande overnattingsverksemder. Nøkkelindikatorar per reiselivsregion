@@ -19,7 +19,7 @@ let
     ""format"": ""json-stat2""
   }
 }",
-	Kilde = Web.Contents("https://data.ssb.no/api/v0/no/table/07459/", [Content=Text.ToBinary(PostContents)]),
+	Kilde = Web.Contents("https://data.ssb.no/api/v0/no/table/13157/", [Content=Text.ToBinary(PostContents)]),
 	Data=Csv.Document(Kilde, [Encoding=1252])
 in
 	Data
