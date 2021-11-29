@@ -1,0 +1,43 @@
+let
+	PostContents = "{
+  ""query"": [
+    {
+      ""code"": ""Region"",
+      ""selection"": {
+        ""filter"": ""agg_single:Fylker2020"",
+        ""values"": [
+          ""30"",
+          ""03"",
+          ""34"",
+          ""38"",
+          ""42"",
+          ""11"",
+          ""46"",
+          ""15"",
+          ""50"",
+          ""18"",
+          ""54""
+        ]
+      }
+    },
+    {
+      ""code"": ""HotellFormal"",
+      ""selection"": {
+        ""filter"": ""item"",
+        ""values"": [
+          ""00"",
+          ""01"",
+          ""02"",
+          ""03""
+        ]
+      }
+    }
+  ],
+  ""response"": {
+    ""format"": ""csv2""
+  }
+}",
+	Kilde = Web.Contents("https://data.ssb.no/api/v0/no/table/08403/", [Content=Text.ToBinary(PostContents)]),
+	Data=Csv.Document(Kilde, [Encoding=1252])
+in
+	Data
